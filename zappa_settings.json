@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "aws_region": "us-east-1",
+        "django_settings": "community_map.settings",
+        "profile_name": "community-map",
+        "project_name": "community-map",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-3vfx1fj4k"
+    }
+}
