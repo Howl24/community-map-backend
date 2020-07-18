@@ -27,3 +27,13 @@ class ListPlaces(APIView):
         places = Place.scan()
         serializer = PlaceSerializer(places, many=True)
         return Response(serializer.data)
+
+
+class BatchCreatePlaces(APIView):
+
+    def post(self, request):
+        serializer = PlaceSerializer(data=request.data, many=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
